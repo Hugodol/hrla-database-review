@@ -10,10 +10,10 @@ const port = 3000;
 const app = express();
 
 // init Database
-require('./database/config');
+  // TODO add database config file
 
 // init database's tables & seed data
-require('./database');
+  // TODO add database models file
 
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));

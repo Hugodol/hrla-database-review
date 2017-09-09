@@ -1,37 +1,13 @@
-const { Meme } = require('../database');
+// TODO import Meme table
 
 module.exports = {
   fetchAll: (req, res) => {
-    Meme.findAll()
-    .then((data) => {
-      res.status(200).send(data);
-    })
-    .catch((err) => {
-      res.status(404).send(err);
-    });
+    // TODO get all memes from the Meme table
   },
   fetch: (req, res) => {
-    Meme.findAll({
-      where: { user_id: req.params.userId },
-    })
-    .then((data) => {
-      res.status(200).send(data);
-    })
-    .catch((err) => {
-      res.status(404).send(err);
-    });
+    // TODO get user specific memes from the Meme table
   },
   create: (req, res) => {
-    Meme.create({
-      url: req.body.url,
-      text: req.body.text,
-      user_id: req.params.userId,
-    })
-    .then((data) => {
-      res.status(201).send(data);
-    })
-    .catch((err) => {
-      res.status(404).send(err);
-    });
+    // TODO create a new meme
   },
 };

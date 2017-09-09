@@ -1,23 +1,10 @@
-const { User } = require('../database');
+// TODO import User table
 
 module.exports = {
   fetchAll: (req, res) => {
-    User.findAll()
-      .then((data) => {
-        res.status(200).send(data);
-      })
-      .catch((err) => {
-        console.log('IN FETCH ALL USERS ERROR', err);
-        res.status(404).send(err);
-      });
+    // TODO get all users from the User table
   },
   create: (req, res) => {
-    User.create(req.body)
-    .then((newUser) => {
-      res.status(201).send(newUser);
-    })
-    .catch((err) => {
-      res.status(404).send(err);
-    });
+    // TODO create a new user
   },
 };

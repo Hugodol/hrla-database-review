@@ -1,7 +1,6 @@
 module.exports = (table, seedData, name) => {
-  seedData.forEach((data) => {
-    table.create(data)
-      .then(() => console.log(`data successfully seeded for ${name}`))
-      .catch(err => console.log('error seeding data', err));
-  });
+  // TODO creete seeding function
+    // table: table to be seeded
+    // seedData: data to seed tabel
+    // name: name of table for console logging
 };

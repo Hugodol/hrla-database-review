@@ -4,40 +4,17 @@ const seed = require('../seeding');
 const memeSeedData = require('../seeding/memeSeedData');
 const userSeedData = require('../seeding/userSeedData');
 
-const User = db.define('User', {
-  firstName: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  lastName: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  age: {
-    type: Sequelize.INTEGER,
-    allowNull: true,
-  },
-});
+// TODO define model for User table
+  // firstname: STRING
+  // lastname: STRING
+  // age: INTEGER
 
-const Meme = db.define('Meme', {
-  url: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  text: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-});
+// TODO define model for Meme table
+  // url: STRING
+  // text: STRING
 
-User.hasMany(Meme, { foreignKey: { name: 'user_id', allowNull: true }, onDelete: 'CASCADE' });
-Meme.belongsTo(User, { foreignKey: { name: 'user_id', allowNull: true }, onDelete: 'CASCADE' });
+// TODO set up relations between User and Meme tables
+  // User has many Memes
+  // Meme belongs to a User
 
-db.sync({ force: true })
-  .then(() => seed(User, userSeedData, 'USER'))
-  .then(() => seed(Meme, memeSeedData, 'MEME'));
-
-module.exports = {
-  User,
-  Meme,
-};
+// TODO sync tables and initialize seeding
