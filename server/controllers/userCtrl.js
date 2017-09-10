@@ -7,7 +7,6 @@ module.exports = {
         res.status(200).send(data);
       })
       .catch((err) => {
-        console.log('IN FETCH ALL USERS ERROR', err);
         res.status(404).send(err);
       });
   },
